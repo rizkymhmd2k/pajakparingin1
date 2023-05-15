@@ -23,7 +23,7 @@ jobs:
       uses: easingthemes/ssh-deploy@v2.4.13
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        server: yourserver.com
-        username: yourusername
-        remote_path: /path/to/your/app
-        local_path: .next/
+        server: pajakparingin.com
+        username: pajakparingin@pajakparingin.com
+        remote_path: /home/paja2554/public_html/pajakparingin
+        local_path: /Users/muhammadrizky/Desktop/web-kantor
