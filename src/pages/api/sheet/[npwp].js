@@ -1,12 +1,8 @@
 import { google } from "googleapis";
 import keys from "../../../../key";
 
-
 export default async function handler(req, res) {
-
   try {
-    // const npwp = '123'; // Client-side input
-
     const { npwp } = req.query;
 
     console.log('npwpquery', npwp);
@@ -34,8 +30,7 @@ export default async function handler(req, res) {
 
     const opt = {
       spreadsheetId: "1AMMrsRcQBSc1NQc21Gz1N8iUoSeO-mOOr30SXk8mYCQ",
-      range: "Database!C:O",
-
+      range: "Database!B:O",
     };
 
     console.log("Sending request to Google Sheets API...");
@@ -43,27 +38,25 @@ export default async function handler(req, res) {
 
     console.log("Received response from Google Sheets API: ", data);
 
-    const phoneNumbers = data.data.values
-      .filter((value) => value[0] === npwp)
-      .map((value) => value[12]);
+    const permohonans = data.data.values
+      .filter((value) => value[1] === npwp)
+      .map((value) => value[13]);
 
-    if (phoneNumbers.length === 0) {
+    const nama = data.data.values
+      .filter((value) => value[1] === npwp)
+      .map((value) => value[1]);
+
+    if (permohonans.length === 0) {
       console.log(`No phone numbers found for NPWP ${npwp}`);
       return res.status(404).json({ error: true, message: "No phone numbers found" });
     }
 
-    console.log(`Phone numbers for NPWP ${npwp}: ${phoneNumbers.join(", ")}`);
-    return res
-      .status(200)
-      .send(JSON.stringify({ error: false, data: phoneNumbers }));
-  } catch (e) {
-    console.error(
-      "Error occurred while fetching data from Google Sheets API: ",
-      e
-    );
+    console.log(`Data for NPWP ${npwp}: `, nama[0], permohonans);
+    return res.status(200).send(JSON.stringify({ error: false, data: {nama: nama[0], permohonans: permohonans} }));
 
-    return res
-      .status(400)
-      .send(JSON.stringify({ error: true, message: e.message }));
+
+  } catch (e) {
+    console.error("Error occurred while fetching data from Google Sheets API: ", e);
+    return res.status(400).send(JSON.stringify({ error: true, message: e.message }));
   }
 }

@@ -76,7 +76,7 @@ const SyaratCard = ({ imgUrl, title, content, modalTitle,  click, syarats, downl
                                     </div>
 
                                     {/*body*/}
-                                    <div className="relative p-6 flex-auto">
+                                    <div className="relative p-8 flex-auto">
                                         <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b" />
 
                                         <div className=''>

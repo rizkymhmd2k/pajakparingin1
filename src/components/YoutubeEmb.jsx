@@ -1,27 +1,41 @@
 'use client';
 import React from "react";
-import PropTypes from "prop-types";
+
+// const YoutubeEmb = ({ embedId }) => {
+//   return (
+//     <div className="video-responsive">
+//       <iframe
+//         width="853"
+//         height="480"
+//         src={`https://www.youtube.com/embed/${embedId}`}
+//         frameBorder="0"
+//         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//         allowFullScreen
+//         title="Embedded youtube"
+//         style={{ width: '100%', height: '100%' }}
+
+//       />
+//     </div>
+//   );
+// };
+
+// export default YoutubeEmb;
 
 const YoutubeEmb = ({ embedId }) => {
-  YoutubeEmb.propTypes = {
-    embedId: PropTypes.string.isRequired
-  };
-
   return (
-    <div className="video-responsive ">
+    // <div className="video-responsive w-full lg:w-2/3 mx-auto">
+    <div className="relative h-0 overflow-hidden video-responsive w-full lg:w-2/3 mx-auto" style={{ paddingBottom: "56.25%" }}>
       <iframe
-        width="853"
-        height="1853"
         src={`https://www.youtube.com/embed/${embedId}`}
+        title="Embedded youtube"
+        className="absolute top-0 left-0 w-full h-full"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        title="Embedded youtube"
-        className="h-[200px] ss:h-[350px] md:h-[400px] lg:h-[700px] w-full relative"
       />
     </div>
-  )
-}
-
+  );
+};
 
 export default YoutubeEmb;
+

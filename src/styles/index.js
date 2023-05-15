@@ -2,7 +2,7 @@ const styles = {
     innerWidth: '2xl:max-w-[1280px] w-full',
     interWidth: 'lg:w-[80%] w-[100%]',
   
-    paddings: 'sm:p-16 xs:p-8 px-6 pb-12 pt-[96px] sm:pt-[96px]',
+    paddings: 'sm:p-16 xs:p-8 px-6 pb-12 pt-[96px] sm:pt-[0px]',
     yPaddings: 'sm:py-27 xs:py-8 py-12',
     yPaddingsMap: 'sm:py-12 xs:py-8 py-12',
 

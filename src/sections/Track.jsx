@@ -32,7 +32,7 @@ const Track = () => {
     const [npwp, setNpwp] = useState('');
     const [npwp1, setNpwp1] = useState('');
     const [showModal, setShowModal] = useState(false);
-    console.log('modalbang', showModal)
+    // console.log('modalbang', showModal)
 
 
 
@@ -46,12 +46,14 @@ const Track = () => {
         }
     }, [data]);
 
-   
+    console.log('Fetched data Nama:', data?.data.nama);
+    console.log('Fetched data Permohonan:', data?.data.permohonans);
+
 
 
     const handleSearch = (e) => {
         e.preventDefault();
-        console.log('NPWP:', npwp);
+        // console.log('NPWP:', npwp);
         // Send data to query
         setNpwp1(npwp);
         setShowModal(true);
@@ -62,7 +64,7 @@ const Track = () => {
 
     return (
         <section id='track' class="bg-zinc-50 ">
-            <div class="pt-16 px-4 mx-auto max-w-screen-xl text-center lg:pt-16 pb-16 lg:px-12">
+            <div class="pt-16 px-4 mx-auto max-w-screen-xl text-center lg:pt-16 pb-[1px] lg:px-12">
 
                 <h1 class="mb-4 mt-20 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">
                     Cek Status Permohonanmu
@@ -110,7 +112,7 @@ const Track = () => {
                         >
                             {/* <div className="relative w-auto my-6 mx-auto max-w-7xl"> */}
 
-                            <div className="relative  mx-4 w-[85%] my-32 lg:w-[55%]  h-[auto]">
+                            <div className="relative  mx-4 w-[auto] my-32 lg:w-[auto] min-w-[300px] h-[auto]">
 
                                 {/*content*/}
                                 <div className='relative h-12 bg-white border-b-2 rounded-t-lg'>
@@ -128,7 +130,7 @@ const Track = () => {
 
 
                                     {/*body*/}
-                                    <div className="relative p-6 flex-auto">
+                                    <div className="relative p-12 flex-auto">
 
                                         <div className=''>
                                             {error ?
@@ -148,9 +150,9 @@ const Track = () => {
                                                 </div>
                                                 : null}
                                             {isValidating ? (
-                                                <div className="fixed top-[20px] left-0 w-full h-full flex flex-col items-center justify-center z-50">
+                                                <div className="flex flex-col justify-center items-center ">
                                                     <div className="animate-spin rounded-full w-20 h-20 border-t-2 border-b-2 border-gray-900"></div>
-                                                    <div className="mt-4 text-gray-900 font-bold">Sabar wal...</div>
+                                                    <div className="mt-4 text-gray-900 font-bold">Loading...</div>
                                                 </div>
 
 
@@ -159,20 +161,20 @@ const Track = () => {
                                             {/* <p className="my-4 text-slate-700 lg:text-[20px] text-[14px] font-bold	 leading-relaxed">Status nyawa</p> */}
 
 
-                                            {data && (
+                                     {data && (
                                                 <div>
                                                     <p className="lg:text-[20px] mb-5 text-slate-700 text-[14px] font-bold leading-relaxed text-center">
-                                                        Status Permohonan
+                                                        Status Permohonan {data?.data.nama}
                                                     </p>
-                                                    {data.data.map((item) => (
-                                                        <ul className="border border-gray-300 shadow p-2 rounded-sm divide-y divide-gray-300">
+                                                    {data?.data.permohonans.map((item) => (
+                                                        <ul key={item} className="border border-gray-300 shadow p-2 rounded-sm divide-y divide-gray-300">
                                                             <li>
                                                                 <p className="lg:text-[20px] text-slate-700 text-[14px]">{item}</p>
                                                             </li>
                                                         </ul>
                                                     ))}
                                                 </div>
-                                            )}
+                                            )}       
 
 
 

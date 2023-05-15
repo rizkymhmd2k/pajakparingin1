@@ -8,7 +8,7 @@ const Layanan = ({ cards }) => {
 
   return (
     <section id="formulir">
-      <div className={`w-full bg-zinc-50 flex-wrap ${styles.flexCenter} ${styles.paddings} gap-[50px] py-[70px]`}>
+      <div className={`w-full bg-zinc-50 flex-wrap ${styles.flexCenter} ${styles.paddings} gap-[50px] pb-[70px]`}>
         {cards.map((card) => (
           <CardComp key={card.title} {...card} />
         ))}

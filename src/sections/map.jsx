@@ -36,7 +36,7 @@ const Map = () => {
                             </p>
 
                             <ul className="mt-8 space-y-1 text-sm text-gray-700">
-                                <li>Senin - Jumat: 8am - 4pm</li>
+                                <li>Senin - Jumat: 08:00 - 16:00</li>
                                 <li>Sabtu - Minggu: Libur</li>
                             </ul>
 
@@ -111,9 +111,9 @@ const Map = () => {
                                     </a>
                                 </li>
 
-                                
 
-                              
+
+
                             </ul>
                         </div>
 
@@ -178,33 +178,13 @@ const Map = () => {
                         </div>
                     </div>
 
-                    <div className="pt-12 mt-12 border-t border-gray-100">
-                        <div className="sm:flex sm:items-center sm:justify-between">
-                            <nav aria-label="Footer Navigation - Support">
-                                <ul className="flex flex-wrap gap-4 text-xs">
-                                    <li>
-                                        <a href="#" className="text-gray-500 transition hover:opacity-75">
-                                            Terms & Conditions
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" className="text-gray-500 transition hover:opacity-75">
-                                            Privacy Policy
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" className="text-gray-500 transition hover:opacity-75">
-                                            Cookies
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                            <p className="mt-8 text-xs text-gray-500 sm:mt-0">
-                                &copy; 2022. Company Name. All rights reserved.
-                            </p>
+                    <div className="pt-12 mt-12 border-t border-gray-100 items-end justify-end w-full">
+                        <div className="sm:flex sm:items-end sm:justify-between justify-end hover:text-red-500">
+                            <a href='https://rizkymhmd2k.github.io/myPortofolio/' className="text-xs text-gray-500 mt-8 sm:mt-0 hover:text-red-500">
+                                <p className="mt-8 text-xs text-gray-500 sm:mt-0">
+                                    &copy; 2022. itsRizky. All rights reserved.
+                                </p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -224,4 +204,3 @@ const Map = () => {
 
 export default Map;
 
-// AIzaSyCiLTTXBHcbtXt5pu4BLlI4hrdELe1md24

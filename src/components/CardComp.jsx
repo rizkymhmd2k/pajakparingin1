@@ -10,15 +10,6 @@ import { YoutubeEmb } from '.';
 const CardComp = ({ imgUrl, title, content, popUp, ytLink, modalTitle, modalTitle1, ytLink1, click }) => {
     const [showModal, setShowModal] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
-    // console.log('click', click);
-
-
-    // <AiFillEye onClick={() => setShowModal(true)} className={`${styles.flexCenter} fill-white block mx-auto w-[50px] h-full  opacity-0 group-hover:opacity-100 transition-all duration-300`} />
-
-    // console.log('popup', popUp?.[0]?.name)
-    // console.log('modal', showModal)
-    // console.log('popUp', showPopup)
-    // console.log('img', imgUrl.asset._ref)
 
 
 
@@ -78,7 +69,7 @@ const CardComp = ({ imgUrl, title, content, popUp, ytLink, modalTitle, modalTitl
                                     {/* cols and row */}
                                     <div className='flex flex-col lg:flex-row md:gap-[1.75rem] '>
                                         <div className={`flex-1 lg:w-1/2 w-full items-center justify-center `}>
-                                            <img src={imgUrl} alt="icon" className="w-[20%] md:w-[40%] mx-auto object-contain" />
+                                            <img src={imgUrl} alt="icon" key={imgUrl} className="w-[20%] md:w-[40%] mx-auto object-contain" />
                                         </div>
                                         <div className='flex items-center justify-center flex-1 flex-col md:items-start'>
                                             <h2 className={`mt-[8px] font-bold md:text-[60px] text-[20px]  text-black`}
@@ -93,7 +84,7 @@ const CardComp = ({ imgUrl, title, content, popUp, ytLink, modalTitle, modalTitl
                                     </div>
 
                                     {/*body*/}
-                                    <div className="relative p-6 flex-auto">
+                                    <div className="relative p-8 flex-auto">
                                         <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b" />
                                         <div className='mb-[39px] md:mb-48'>
                                             <p className="my-4 text-slate-700 lg:text-[20px] text-[14px] font-bold	 leading-relaxed">{modalTitle}</p>
