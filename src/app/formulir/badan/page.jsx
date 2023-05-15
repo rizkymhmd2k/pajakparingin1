@@ -14,7 +14,7 @@ export default async function Home() {
             <Navbar />
 
             <div className='flex flex-col justify-center items-center py-6 px-24 sm:px-10'>
-                <h2 className={`${styles.heroHeading} text-center `}>Formulir Badan</h2>
+                <h2 className={`${styles.heroHeading} text-center `}>Formulir Badann</h2>
 
                 <div className={`w-full flex-wrap ${styles.flexCenter} gap-[50px] py-[70px]`}>
                     {formulirCard.map((card) => (
